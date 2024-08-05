@@ -1,12 +1,12 @@
-// const chromium = require("chrome-aws-lambda");
-// const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
-// const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
-// // var locateChrome = require("locate-chrome");
-// const {
-//   PutItemCommand,
-//   DeleteItemCommand,
-// } = require("@aws-sdk/client-dynamodb");
-// const proxyChain = require("proxy-chain");
+const chromium = require("chrome-aws-lambda");
+const { DynamoDBClient } = require("@aws-sdk/client-dynamodb");
+const { marshall, unmarshall } = require("@aws-sdk/util-dynamodb");
+// var locateChrome = require("locate-chrome");
+const {
+  PutItemCommand,
+  DeleteItemCommand,
+} = require("@aws-sdk/client-dynamodb");
+const proxyChain = require("proxy-chain");
 
 // process.env.AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE = "1";
 // let options = {
