@@ -8,15 +8,15 @@ const {
 } = require("@aws-sdk/client-dynamodb");
 const proxyChain = require("proxy-chain");
 
-// process.env.AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE = "1";
-// let options = {
-//   region: "us-west-2",
-// };
+process.env.AWS_SDK_JS_SUPPRESS_MAINTENANCE_MODE_MESSAGE = "1";
+let options = {
+  region: "us-west-2",
+};
 
-// const client = new DynamoDBClient(options);
-// const dynamodbTableName = "hotels";
-// const hotel = "/hotel";
-// const scrape = "/scrape";
+const client = new DynamoDBClient(options);
+const dynamodbTableName = "hotels";
+const hotel = "/hotel";
+const scrape = "/scrape";
 
 // exports.handler = async function (event) {
 //   let response;
