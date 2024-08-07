@@ -18,25 +18,25 @@ const dynamodbTableName = "hotels";
 const hotel = "/hotel";
 const scrape = "/scrape";
 
-// exports.handler = async function (event) {
-//   let response;
-//   if (event.httpMethod === "POST" && event.path === hotel) {
-//     response = await createHotel(JSON.parse(event.body));
-//   } else if (event.httpMethod === "DELETE" && event.path === hotel) {
-//     response = await deleteHotel(JSON.parse(event.body).hotel_id);
-//   } else if (event.httpMethod === "POST" && event.path === scrape) {
-//     response = await scrapeAndGetHotelData(JSON.parse(event.body));
-//     // response = await scrapeAndGetHotelData(event.body);
-//   } else {
-//     response = {
-//       statusCode: 400,
-//       errorMsg: "endpoint not handled!",
-//       httpMethod: event,
-//       path: event.path,
-//     };
-//   }
-//   return response;
-// };
+exports.handler = async function (event) {
+  let response;
+  if (event.httpMethod === "POST" && event.path === hotel) {
+    response = await createHotel(JSON.parse(event.body));
+  } else if (event.httpMethod === "DELETE" && event.path === hotel) {
+    response = await deleteHotel(JSON.parse(event.body).hotel_id);
+  } else if (event.httpMethod === "POST" && event.path === scrape) {
+    response = await scrapeAndGetHotelData(JSON.parse(event.body));
+    // response = await scrapeAndGetHotelData(event.body);
+  } else {
+    response = {
+      statusCode: 400,
+      errorMsg: "endpoint not handled!",
+      httpMethod: event,
+      path: event.path,
+    };
+  }
+  return response;
+};
 
 // const scrapeAndGetHotelData = async (body) => {
 //   let { hotel_id, arrival_date, departure_Date } = body;
