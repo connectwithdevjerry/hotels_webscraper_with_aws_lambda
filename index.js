@@ -38,30 +38,30 @@ exports.handler = async function (event) {
   return response;
 };
 
-// const scrapeAndGetHotelData = async (body) => {
-//   let { hotel_id, arrival_date, departure_Date } = body;
+const scrapeAndGetHotelData = async (body) => {
+  let { hotel_id, arrival_date, departure_Date } = body;
 
-//   const response = { statusCode: 200 };
-//   let data;
+  const response = { statusCode: 200 };
+  let data;
 
-//   if (hotel_id === 1767) {
-//     data = await cancun(arrival_date, departure_Date);
-//   } else if (hotel_id === 21) {
-//     data = await wymara_resort(arrival_date, departure_Date);
-//   } else if (hotel_id === 78) {
-//     data = await nizuc(arrival_date, departure_Date);
-//   } else if (hotel_id === 17) {
-//     data = await grace_bay_club(arrival_date, departure_Date);
-//   } else {
-//     response.statusCode = 404;
-//     data = {
-//       errMsg: "wrong input",
-//     };
-//   }
+  if (hotel_id === 1767) {
+    data = await cancun(arrival_date, departure_Date);
+  } else if (hotel_id === 21) {
+    data = await wymara_resort(arrival_date, departure_Date);
+  } else if (hotel_id === 78) {
+    data = await nizuc(arrival_date, departure_Date);
+  } else if (hotel_id === 17) {
+    data = await grace_bay_club(arrival_date, departure_Date);
+  } else {
+    response.statusCode = 404;
+    data = {
+      errMsg: "wrong input",
+    };
+  }
 
-//   response.body = JSON.stringify(data);
-//   return response;
-// };
+  response.body = JSON.stringify(data);
+  return response;
+};
 
 // const deleteHotel = async (hotel_id) => {
 //   const response = { statusCode: 200 };
