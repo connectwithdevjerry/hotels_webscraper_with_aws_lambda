@@ -63,30 +63,30 @@ const scrapeAndGetHotelData = async (body) => {
   return response;
 };
 
-// const deleteHotel = async (hotel_id) => {
-//   const response = { statusCode: 200 };
-//   try {
-//     const params = {
-//       TableName: dynamodbTableName,
-//       Key: marshall({ hotel_id: Number(hotel_id) }),
-//     };
-//     let deleteResult = await client.send(new DeleteItemCommand(params));
-//     // console.log({ deleteResult });
-//     response.body = JSON.stringify({
-//       message: "successfully deleted hotel.",
-//       deleteResult,
-//     });
-//   } catch (e) {
-//     console.error(e);
-//     response.statusCode = 500;
-//     response.body = JSON.stringify({
-//       message: "Failed to deleted hotel",
-//       errorMsg: e.message,
-//       errorStack: e.stack,
-//     });
-//   }
-//   return response;
-// };
+const deleteHotel = async (hotel_id) => {
+  const response = { statusCode: 200 };
+  try {
+    const params = {
+      TableName: dynamodbTableName,
+      Key: marshall({ hotel_id: Number(hotel_id) }),
+    };
+    let deleteResult = await client.send(new DeleteItemCommand(params));
+    // console.log({ deleteResult });
+    response.body = JSON.stringify({
+      message: "successfully deleted hotel.",
+      deleteResult,
+    });
+  } catch (e) {
+    console.error(e);
+    response.statusCode = 500;
+    response.body = JSON.stringify({
+      message: "Failed to deleted hotel",
+      errorMsg: e.message,
+      errorStack: e.stack,
+    });
+  }
+  return response;
+};
 
 // const createHotel = async (body) => {
 //   let { hotel_name, hotel_id, hotel_url } = body;
