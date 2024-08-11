@@ -88,36 +88,36 @@ const deleteHotel = async (hotel_id) => {
   return response;
 };
 
-// const createHotel = async (body) => {
-//   let { hotel_name, hotel_id, hotel_url } = body;
-//   const para = {
-//     hotel_id,
-//     hotel_name,
-//     hotel_url,
-//   };
-//   const response = { statusCode: 200 };
-//   try {
-//     const params = {
-//       TableName: dynamodbTableName,
-//       Item: marshall(para || {}),
-//     };
-//     const createResult = await client.send(new PutItemCommand(params));
-//     // console.log({ createResult });
-//     response.body = JSON.stringify({
-//       message: "successfully created hotel.",
-//       createResult,
-//     });
-//   } catch (e) {
-//     console.error(e);
-//     response.statusCode = 500;
-//     response.body = JSON.stringify({
-//       message: "Failed to create hotel",
-//       errorMsg: e.message,
-//       errorStack: e.stack,
-//     });
-//   }
-//   return response;
-// };
+const createHotel = async (body) => {
+  let { hotel_name, hotel_id, hotel_url } = body;
+  const para = {
+    hotel_id,
+    hotel_name,
+    hotel_url,
+  };
+  const response = { statusCode: 200 };
+  try {
+    const params = {
+      TableName: dynamodbTableName,
+      Item: marshall(para || {}),
+    };
+    const createResult = await client.send(new PutItemCommand(params));
+    // console.log({ createResult });
+    response.body = JSON.stringify({
+      message: "successfully created hotel.",
+      createResult,
+    });
+  } catch (e) {
+    console.error(e);
+    response.statusCode = 500;
+    response.body = JSON.stringify({
+      message: "Failed to create hotel",
+      errorMsg: e.message,
+      errorStack: e.stack,
+    });
+  }
+  return response;
+};
 
 // // hotels
 // const grace_bay_club = async (
