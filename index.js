@@ -119,86 +119,86 @@ const createHotel = async (body) => {
   return response;
 };
 
-// // hotels
-// const grace_bay_club = async (
-//   arrival_date = "2024-01-13",
-//   departure_Date = "2024-01-20"
-// ) => {
-//   let result = await (async (arrival_date, departure_Date) => {
-//     const oldProxyUrl =
-//       "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
-//     const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
-//     // console.log({ newProxyUrl });
-//     // Launch the browser and open a new blank page
-//     let args = chromium.args;
-//     console.log({ args });
-//     const browser = await chromium.puppeteer.launch({
-//       args: [`--proxy-server=${newProxyUrl}`],
-//       defaultViewport: chromium.defaultViewport,
-//       executablePath: await chromium.executablePath,
-//       headless: false,
-//       ignoreHTTPSErrors: true,
-//     });
-//     const page = await browser.newPage();
-//     await page.setViewport({ width: 1366, height: 1024 });
-//     await page.setDefaultNavigationTimeout(120000);
+// hotels
+const grace_bay_club = async (
+  arrival_date = "2024-01-13",
+  departure_Date = "2024-01-20"
+) => {
+  let result = await (async (arrival_date, departure_Date) => {
+    const oldProxyUrl =
+      "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
+    const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
+    // console.log({ newProxyUrl });
+    // Launch the browser and open a new blank page
+    let args = chromium.args;
+    console.log({ args });
+    const browser = await chromium.puppeteer.launch({
+      args: [`--proxy-server=${newProxyUrl}`],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: false,
+      ignoreHTTPSErrors: true,
+    });
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1366, height: 1024 });
+    await page.setDefaultNavigationTimeout(120000);
 
-//     // let [day0, mth0, yr0] = arrival_date.split("-");
-//     // let [day1, mth1, yr1] = departure_Date.split("-");
-//     // let arrive = `${yr0}-${mth0}-${day0}`;
-//     // let depart = `${yr1}-${mth1}-${day1}`;
+    // let [day0, mth0, yr0] = arrival_date.split("-");
+    // let [day1, mth1, yr1] = departure_Date.split("-");
+    // let arrive = `${yr0}-${mth0}-${day0}`;
+    // let depart = `${yr1}-${mth1}-${day1}`;
 
-//     let website_url = `https://be.synxis.com/?_ga-ft=1bNOi3.0.0.0.0.3ZPUE9-5h0-4io-BlJ-Akmnwggi.0.1&_gl=1*1bmc59b*_ga*MjA5OTcxNjkxOC4xNzAwNjI0MzA5*_ga_FDTY66CS39*MTcwMDYyODk2Mi4yLjEuMTcwMDYyOTI0Ny42MC4wLjA.&adult=1&arrive=${arrival_date}&chain=24447&child=0&config=leading1&currency=USD&depart=${departure_Date}&hotel=6905&level=hotel&locale=en-US&roomcategory=JR%2C1BR%2C2BR%2C3BR%2C4BR%2C5BR&rooms=1&src=30&theme=leading1`;
+    let website_url = `https://be.synxis.com/?_ga-ft=1bNOi3.0.0.0.0.3ZPUE9-5h0-4io-BlJ-Akmnwggi.0.1&_gl=1*1bmc59b*_ga*MjA5OTcxNjkxOC4xNzAwNjI0MzA5*_ga_FDTY66CS39*MTcwMDYyODk2Mi4yLjEuMTcwMDYyOTI0Ny42MC4wLjA.&adult=1&arrive=${arrival_date}&chain=24447&child=0&config=leading1&currency=USD&depart=${departure_Date}&hotel=6905&level=hotel&locale=en-US&roomcategory=JR%2C1BR%2C2BR%2C3BR%2C4BR%2C5BR&rooms=1&src=30&theme=leading1`;
 
-//     // Navigate the page to a URL
-//     await page.goto(website_url);
+    // Navigate the page to a URL
+    await page.goto(website_url);
 
-//     const allRooms = await page.evaluate(() =>
-//       Array.from(
-//         document.querySelectorAll(
-//           ".thumb-cards_groupedCards.app_col-sm-12.app_col-md-12.app_col-lg-12 > div > div > div.app_col-sm-12.app_col-md-8.app_col-lg-8"
-//         ),
-//         (e) => ({
-//           room_name: e.querySelector("div.thumb-cards_cardHeader > h3")
-//             ?.innerText,
-//           rates: Array.from(
-//             e?.querySelectorAll(
-//               ".thumb-cards_rate.thumb-cards_show .thumb-cards_priceMessages .thumb-cards_price"
-//             ),
-//             (ev) => ev?.innerText
-//           ),
-//           sleeps: e.querySelector(
-//             ".guests-and-roomsize_roomProperties .guests-and-roomsize_item.guests-and-roomsize_guests"
-//           )?.innerText,
-//           bed: e.querySelector(
-//             ".guests-and-roomsize_item.guests-and-roomsize_bed"
-//           )?.innerText,
-//           size: e
-//             .querySelector(".guests-and-roomsize_item.guests-and-roomsize_size")
-//             ?.innerText.replace("\nsquare feet", ""),
-//         })
-//       )
-//     );
+    const allRooms = await page.evaluate(() =>
+      Array.from(
+        document.querySelectorAll(
+          ".thumb-cards_groupedCards.app_col-sm-12.app_col-md-12.app_col-lg-12 > div > div > div.app_col-sm-12.app_col-md-8.app_col-lg-8"
+        ),
+        (e) => ({
+          room_name: e.querySelector("div.thumb-cards_cardHeader > h3")
+            ?.innerText,
+          rates: Array.from(
+            e?.querySelectorAll(
+              ".thumb-cards_rate.thumb-cards_show .thumb-cards_priceMessages .thumb-cards_price"
+            ),
+            (ev) => ev?.innerText
+          ),
+          sleeps: e.querySelector(
+            ".guests-and-roomsize_roomProperties .guests-and-roomsize_item.guests-and-roomsize_guests"
+          )?.innerText,
+          bed: e.querySelector(
+            ".guests-and-roomsize_item.guests-and-roomsize_bed"
+          )?.innerText,
+          size: e
+            .querySelector(".guests-and-roomsize_item.guests-and-roomsize_size")
+            ?.innerText.replace("\nsquare feet", ""),
+        })
+      )
+    );
 
-//     if (allRooms.length > 0) {
-//       console.log({ status: "sucess", res: allRooms });
-//     } else {
-//       console.log({ status: "error", res: "Could not fetch page" });
-//     }
+    if (allRooms.length > 0) {
+      console.log({ status: "sucess", res: allRooms });
+    } else {
+      console.log({ status: "error", res: "Could not fetch page" });
+    }
 
-//     // Type into search box
-//     let title = await page.title();
+    // Type into search box
+    let title = await page.title();
 
-//     // console.log(title);
+    // console.log(title);
 
-//     await browser.close();
-//     // await process.exit();
-//     return { rooms: allRooms, title };
-//   })(arrival_date, departure_Date);
+    await browser.close();
+    // await process.exit();
+    return { rooms: allRooms, title };
+  })(arrival_date, departure_Date);
 
-//   // console.log(result);
-//   return result;
-// };
+  // console.log(result);
+  return result;
+};
 
 // const sugar_beach = async (
 //   arrival_date = "2024-01-13",
