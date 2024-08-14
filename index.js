@@ -200,10 +200,10 @@ const grace_bay_club = async (
   return result;
 };
 
-// const sugar_beach = async (
+const sugar_beach = async (
 //   arrival_date = "2024-01-13",
 //   departure_Date = "2024-01-20"
-// ) => {
+) => {
 //   let result = await (async (arrival_date, departure_Date) => {
 //     // const executablePath =
 //     //   (await new Promise((resolve) => locateChrome((arg) => resolve(arg)))) ||
@@ -272,7 +272,7 @@ const grace_bay_club = async (
 
 //   // console.log({ result });
 //   return result;
-// };
+};
 
 // const nizuc = async (
 //   arrival_date = "2024-01-12",
