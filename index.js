@@ -204,74 +204,74 @@ const sugar_beach = async (
 //   arrival_date = "2024-01-13",
 //   departure_Date = "2024-01-20"
 ) => {
-//   let result = await (async (arrival_date, departure_Date) => {
-//     // const executablePath =
-//     //   (await new Promise((resolve) => locateChrome((arg) => resolve(arg)))) ||
-//     //   "";
-//     const oldProxyUrl =
-//       "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
-//     const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
-//     // console.log({ newProxyUrl });
-//     // Launch the browser and open a new blank page
-//     let browser = await chromium.puppeteer.launch({
-//       args: [`--proxy-server=${newProxyUrl}`],
-//       defaultViewport: chromium.defaultViewport,
-//       executablePath: await chromium.executablePath,
-//       // executablePath: executablePath,
-//       headless: false,
-//       ignoreHTTPSErrors: true,
-//     });
-//     const page = await browser.newPage();
-//     await page.setViewport({ width: 1366, height: 1024 });
-//     await page.setDefaultNavigationTimeout(120000);
+  let result = await (async (arrival_date, departure_Date) => {
+    // const executablePath =
+    //   (await new Promise((resolve) => locateChrome((arg) => resolve(arg)))) ||
+    //   "";
+    const oldProxyUrl =
+      "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
+    const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
+    // console.log({ newProxyUrl });
+    // Launch the browser and open a new blank page
+    let browser = await chromium.puppeteer.launch({
+      args: [`--proxy-server=${newProxyUrl}`],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      // executablePath: executablePath,
+      headless: false,
+      ignoreHTTPSErrors: true,
+    });
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1366, height: 1024 });
+    await page.setDefaultNavigationTimeout(120000);
 
-//     let website_url = `https://reservations.viceroyhotelsandresorts.com/?_ga=2.63980905.754880256.1697504574-1226995346.1697504574&adult=1&arrive=${arrival_date}&chain=1003&child=1&childages=17&currency=USD&depart=${departure_Date}&hotel=22215&level=hotel&locale=en-US&rooms=1`;
+    let website_url = `https://reservations.viceroyhotelsandresorts.com/?_ga=2.63980905.754880256.1697504574-1226995346.1697504574&adult=1&arrive=${arrival_date}&chain=1003&child=1&childages=17&currency=USD&depart=${departure_Date}&hotel=22215&level=hotel&locale=en-US&rooms=1`;
 
-//     // Navigate the page to a URL4
-//     await page.goto(website_url);
+    // Navigate the page to a URL4
+    await page.goto(website_url);
 
-//     let roomVal = await page.evaluate(() => {
-//       let el = document.querySelector(
-//         "#mainContent > div > div.app_col-sm-12.app_col-md-12.app_col-lg-12 > section"
-//       );
-//       return el ? el.innerText : "";
-//     });
+    let roomVal = await page.evaluate(() => {
+      let el = document.querySelector(
+        "#mainContent > div > div.app_col-sm-12.app_col-md-12.app_col-lg-12 > section"
+      );
+      return el ? el.innerText : "";
+    });
 
-//     console.log({ roomVal });
+    console.log({ roomVal });
 
-//     const allRooms = await page.evaluate(() =>
-//       Array.from(document.querySelectorAll(".thumb-cards_room"), (e) => ({
-//         room_name: e.querySelector("h3.app_subheading2")?.innerText,
-//         rates: e.querySelector(".thumb-cards_right .thumb-cards_price")
-//           ?.innerText,
-//         sleeps: e.querySelector(
-//           ".guests-and-roomsize_item.guests-and-roomsize_guests"
-//         )?.innerText,
-//         bed: e.querySelector(
-//           ".guests-and-roomsize_item.guests-and-roomsize_bed"
-//         )?.innerText,
-//         size: e
-//           .querySelector(".guests-and-roomsize_item.guests-and-roomsize_size")
-//           ?.innerText.replace("\nsquare feet", ""),
-//       }))
-//     );
+    const allRooms = await page.evaluate(() =>
+      Array.from(document.querySelectorAll(".thumb-cards_room"), (e) => ({
+        room_name: e.querySelector("h3.app_subheading2")?.innerText,
+        rates: e.querySelector(".thumb-cards_right .thumb-cards_price")
+          ?.innerText,
+        sleeps: e.querySelector(
+          ".guests-and-roomsize_item.guests-and-roomsize_guests"
+        )?.innerText,
+        bed: e.querySelector(
+          ".guests-and-roomsize_item.guests-and-roomsize_bed"
+        )?.innerText,
+        size: e
+          .querySelector(".guests-and-roomsize_item.guests-and-roomsize_size")
+          ?.innerText.replace("\nsquare feet", ""),
+      }))
+    );
 
-//     console.log({ allRooms });
+    console.log({ allRooms });
 
-//     // Type into search box
-//     let title = await page.title();
+    // Type into search box
+    let title = await page.title();
 
-//     // console.log(title);
+    // console.log(title);
 
-//     await browser.close();
-//     // await process.exit();
-//     return roomVal.trim().length > 0
-//       ? { res: roomVal }
-//       : { rooms: allRooms, title };
-//   })(arrival_date, departure_Date);
+    await browser.close();
+    // await process.exit();
+    return roomVal.trim().length > 0
+      ? { res: roomVal }
+      : { rooms: allRooms, title };
+  })(arrival_date, departure_Date);
 
-//   // console.log({ result });
-//   return result;
+  console.log({ result });
+  return result;
 };
 
 // const nizuc = async (
