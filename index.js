@@ -201,8 +201,8 @@ const grace_bay_club = async (
 };
 
 const sugar_beach = async (
-//   arrival_date = "2024-01-13",
-//   departure_Date = "2024-01-20"
+  arrival_date = "2024-01-13",
+  departure_Date = "2024-01-20"
 ) => {
   let result = await (async (arrival_date, departure_Date) => {
     // const executablePath =
