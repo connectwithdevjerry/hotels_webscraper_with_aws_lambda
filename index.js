@@ -274,69 +274,69 @@ const sugar_beach = async (
   return result;
 };
 
-// const nizuc = async (
-//   arrival_date = "2024-01-12",
-//   departure_Date = "2024-01-20"
-// ) => {
-//   let result = await (async (arrival_date, departure_Date) => {
-//     const oldProxyUrl =
-//       "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
-//     const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
-//     // console.log({ newProxyUrl });
+const nizuc = async (
+  arrival_date = "2024-01-12",
+  departure_Date = "2024-01-20"
+) => {
+  let result = await (async (arrival_date, departure_Date) => {
+    const oldProxyUrl =
+      "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
+    const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
+    // console.log({ newProxyUrl });
 
-//     // Launch the browser and open a new blank page
-//     let browser = await chromium.puppeteer.launch({
-//       args: [`--proxy-server=${newProxyUrl}`],
-//       defaultViewport: chromium.defaultViewport,
-//       executablePath: await chromium.executablePath,
-//       headless: false,
-//       ignoreHTTPSErrors: true,
-//     });
+    // Launch the browser and open a new blank page
+    let browser = await chromium.puppeteer.launch({
+      args: [`--proxy-server=${newProxyUrl}`],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: false,
+      ignoreHTTPSErrors: true,
+    });
 
-//     const page = await browser.newPage();
-//     await page.setViewport({ width: 1366, height: 1024 });
-//     await page.setDefaultNavigationTimeout(120000);
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1366, height: 1024 });
+    await page.setDefaultNavigationTimeout(120000);
 
-//     let website_url = `https://be.synxis.com/?adult=2&arrive=${arrival_date}&chain=10237&child=0&currency=USD&depart=${departure_Date}&hotel=58283&level=hotel&locale=en-US&rooms=1`;
+    let website_url = `https://be.synxis.com/?adult=2&arrive=${arrival_date}&chain=10237&child=0&currency=USD&depart=${departure_Date}&hotel=58283&level=hotel&locale=en-US&rooms=1`;
 
-//     // Navigate the page to a URL
-//     await page.goto(website_url);
+    // Navigate the page to a URL
+    await page.goto(website_url);
 
-//     const allRooms = await page.evaluate(() =>
-//       Array.from(
-//         document.querySelectorAll(".app_col-sm-12.app_col-md-8.app_col-lg-8"),
-//         (e) => ({
-//           room_name: e.querySelector("h2.app_heading1")?.innerText,
-//           rates: Array.from(
-//             e.querySelectorAll(".thumb-cards_right .thumb-cards_price"),
-//             (ev) => ev?.innerText
-//           ),
-//           sleeps_bed_size: e.querySelector(
-//             ".thumb-cards_urgencyTriggerAndRoomInfo"
-//           ).innerText,
-//         })
-//       )
-//     );
+    const allRooms = await page.evaluate(() =>
+      Array.from(
+        document.querySelectorAll(".app_col-sm-12.app_col-md-8.app_col-lg-8"),
+        (e) => ({
+          room_name: e.querySelector("h2.app_heading1")?.innerText,
+          rates: Array.from(
+            e.querySelectorAll(".thumb-cards_right .thumb-cards_price"),
+            (ev) => ev?.innerText
+          ),
+          sleeps_bed_size: e.querySelector(
+            ".thumb-cards_urgencyTriggerAndRoomInfo"
+          ).innerText,
+        })
+      )
+    );
 
-//     if (allRooms.length > 0) {
-//       console.log({ status: "sucess", res: allRooms });
-//     } else {
-//       console.log({ status: "error", res: "Could not fetch page" });
-//     }
+    if (allRooms.length > 0) {
+      console.log({ status: "sucess", res: allRooms });
+    } else {
+      console.log({ status: "error", res: "Could not fetch page" });
+    }
 
-//     // Type into search box
-//     let title = await page.title();
+    // Type into search box
+    let title = await page.title();
 
-//     console.log(title);
+    console.log(title);
 
-//     await browser.close();
-//     // await process.exit();
-//     return { rooms: allRooms, title };
-//   })(arrival_date, departure_Date);
+    await browser.close();
+    // await process.exit();
+    return { rooms: allRooms, title };
+  })(arrival_date, departure_Date);
 
-//   // console.log(result);
-//   return result;
-// };
+  // console.log(result);
+  return result;
+};
 
 // const wymara_resort = async (
 //   arrival_date = "2024-01-13",
