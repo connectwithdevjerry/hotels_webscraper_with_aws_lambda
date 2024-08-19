@@ -338,66 +338,66 @@ const nizuc = async (
   return result;
 };
 
-// const wymara_resort = async (
-//   arrival_date = "2024-01-13",
-//   departure_Date = "2024-01-20"
-// ) => {
-//   let result = await (async (arrival_date, departure_Date) => {
-//     const oldProxyUrl =
-//       "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
-//     const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
-//     // console.log({ newProxyUrl });
-//     // Launch the browser and open a new blank page
-//     // let args = chromium.args;
-//     // console.log(args)
-//     const browser = await chromium.puppeteer.launch({
-//       args: [`--proxy-server=${newProxyUrl}`],
-//       defaultViewport: chromium.defaultViewport,
-//       executablePath: await chromium.executablePath,
-//       headless: true,
-//       ignoreHTTPSErrors: true,
-//     });
-//     const page = await browser.newPage();
-//     await page.setViewport({ width: 1366, height: 1024 });
-//     await page.setDefaultNavigationTimeout(120000);
+const wymara_resort = async (
+  arrival_date = "2024-01-13",
+  departure_Date = "2024-01-20"
+) => {
+  let result = await (async (arrival_date, departure_Date) => {
+    const oldProxyUrl =
+      "http://webmaster_ultimatejetvacations_com-country-us:fr8xz368j0@gate.nodemaven.com:8080";
+    const newProxyUrl = await proxyChain.anonymizeProxy(oldProxyUrl);
+    // console.log({ newProxyUrl });
+    // Launch the browser and open a new blank page
+    // let args = chromium.args;
+    // console.log(args)
+    // const browser = await chromium.puppeteer.launch({
+    //   args: [`--proxy-server=${newProxyUrl}`],
+    //   defaultViewport: chromium.defaultViewport,
+    //   executablePath: await chromium.executablePath,
+    //   headless: true,
+    //   ignoreHTTPSErrors: true,
+    // });
+    const page = await browser.newPage();
+    await page.setViewport({ width: 1366, height: 1024 });
+    await page.setDefaultNavigationTimeout(120000);
 
-//     let website_url = `https://be.synxis.com/?chain=24447&hotel=35896&arrive=${arrival_date}&depart=${departure_Date}`;
+    let website_url = `https://be.synxis.com/?chain=24447&hotel=35896&arrive=${arrival_date}&depart=${departure_Date}`;
 
-//     // Navigate the page to a URL
-//     await page.goto(website_url);
+    // Navigate the page to a URL
+    await page.goto(website_url);
 
-//     const allRooms = await page.evaluate(() =>
-//       Array.from(document.querySelectorAll(".thumb-cards_details"), (e) => ({
-//         room_name: e.querySelector("h3.app_subheading2")?.innerText,
-//         rates: Array.from(
-//           e.querySelectorAll(".thumb-cards_right .thumb-cards_price"),
-//           (ev) => ev?.innerText
-//         ),
-//         sleeps_bed_size: e.querySelector(
-//           ".thumb-cards_urgencyTriggerAndRoomInfo"
-//         ).innerText,
-//         description: e.querySelector(".thumb-cards_roomShortDesc").innerText,
-//       }))
-//     );
+    const allRooms = await page.evaluate(() =>
+      Array.from(document.querySelectorAll(".thumb-cards_details"), (e) => ({
+        room_name: e.querySelector("h3.app_subheading2")?.innerText,
+        rates: Array.from(
+          e.querySelectorAll(".thumb-cards_right .thumb-cards_price"),
+          (ev) => ev?.innerText
+        ),
+        sleeps_bed_size: e.querySelector(
+          ".thumb-cards_urgencyTriggerAndRoomInfo"
+        ).innerText,
+        description: e.querySelector(".thumb-cards_roomShortDesc").innerText,
+      }))
+    );
 
-//     if (allRooms.length > 0) {
-//       console.log({ status: "sucess", res: allRooms });
-//     } else {
-//       console.log({ status: "error", res: "Could not fetch page" });
-//     }
+    if (allRooms.length > 0) {
+      console.log({ status: "sucess", res: allRooms });
+    } else {
+      console.log({ status: "error", res: "Could not fetch page" });
+    }
 
-//     // Type into search box
-//     let title = await page.title();
+    // Type into search box
+    let title = await page.title();
 
-//     // console.log(title);
+    // console.log(title);
 
-//     // await process.exit();
-//     await browser.close();
-//     return { rooms: allRooms, title };
-//   })(arrival_date, departure_Date);
+    // await process.exit();
+    await browser.close();
+    return { rooms: allRooms, title };
+  })(arrival_date, departure_Date);
 
-//   return result;
-// };
+  return result;
+};
 
 // const cancun = async (
 //   arrival_date = "2024-01-13",
