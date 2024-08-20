@@ -350,13 +350,13 @@ const wymara_resort = async (
     // Launch the browser and open a new blank page
     // let args = chromium.args;
     // console.log(args)
-    // const browser = await chromium.puppeteer.launch({
-    //   args: [`--proxy-server=${newProxyUrl}`],
-    //   defaultViewport: chromium.defaultViewport,
-    //   executablePath: await chromium.executablePath,
-    //   headless: true,
-    //   ignoreHTTPSErrors: true,
-    // });
+    const browser = await chromium.puppeteer.launch({
+      args: [`--proxy-server=${newProxyUrl}`],
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath,
+      headless: true,
+      ignoreHTTPSErrors: true,
+    });
     const page = await browser.newPage();
     await page.setViewport({ width: 1366, height: 1024 });
     await page.setDefaultNavigationTimeout(120000);
