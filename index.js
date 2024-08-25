@@ -587,4 +587,4 @@ const cancun = async (
 // // cancun("2024-01-17", "2024-01-25"); // works perfectly in both modes
 // // wymara_resort("2024-01-17", "2024-01-25"); // works perfectly in both modes
 // // nizuc("2024-01-17", "2024-01-25"); // works perfectly in both modes
-// grace_bay_club("2024-01-22", "2024-01-27"); // works perfectly in both modes
+grace_bay_club("2024-01-22", "2024-01-27"); // works perfectly in both modes
