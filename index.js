@@ -422,14 +422,14 @@ const cancun = async (
     await page.setViewport({ width: 0, height: 0 });
     await page.setDefaultNavigationTimeout(120000);
 
-    // let arrival = arrival_date;
-    // let departure = departure_Date;
-    // let [year, mth, day] = arrival.split("-");
-    // let [yearD, mthD, dayD] = departure.split("-");
-    // mth = mth[0] == "0" ? mth[1] : mth;
-    // mthD = mthD[0] == "0" ? mthD[1] : mthD;
-    // day = day[0] == "0" ? day[1] : day;
-    // dayD = dayD[0] == "0" ? dayD[1] : dayD; // in cases of days with singular values
+    let arrival = arrival_date;
+    let departure = departure_Date;
+    let [year, mth, day] = arrival.split("-");
+    let [yearD, mthD, dayD] = departure.split("-");
+    mth = mth[0] == "0" ? mth[1] : mth;
+    mthD = mthD[0] == "0" ? mthD[1] : mthD;
+    day = day[0] == "0" ? day[1] : day;
+    dayD = dayD[0] == "0" ? dayD[1] : dayD; // in cases of days with singular values
 
     let website_url = `https://bookings-cancun.garzablancaresort.com/en/bookcore/availability/rooms/gblancacancun/`;
 
